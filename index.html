@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Stella · Sistema de Gestión</title>
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo">
+      <div class="logo-icon">S</div>
+      <div>
+        <div class="logo-name">Clínica Stella</div>
+        <div class="logo-sub">Sistema de Gestión</div>
+      </div>
+    </div>
+    <nav id="main-nav">
+      <button class="nav-btn active" data-page="dashboard">📊 Dashboard</button>
+      <button class="nav-btn" data-page="caja">💰 Caja</button>
+      <button class="nav-btn" data-page="costes">📋 Costes</button>
+      <button class="nav-btn" data-page="cashflow">🏦 Cashflow</button>
+      <button class="nav-btn" data-page="rentabilidad">📈 Rentabilidad</button>
+      <button class="nav-btn" data-page="pacientes">👥 Pacientes</button>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT — cada módulo se inyecta aquí -->
+  <main id="app"></main>
+
+  <!-- SCRIPTS — orden importa -->
+  <script src="src/utils/storage.js"></script>
+  <script src="src/utils/parsers.js"></script>
+  <script src="src/utils/formatters.js"></script>
+  <script src="src/utils/calculations.js"></script>
+  <script src="src/modules/caja.js"></script>
+  <script src="src/modules/costes.js"></script>
+  <script src="src/modules/stubs.js"></script>
+  <script src="src/modules/dashboard.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
