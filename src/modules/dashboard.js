@@ -19,9 +19,9 @@ const Dashboard = {
     }
 
     return `
-      <div style="margin-bottom:24px">
-        <h2 style="font-size:22px;font-weight:700">Clínica Stella</h2>
-        <p style="color:var(--muted);font-size:13px;margin-top:4px">Panel de control · visión global</p>
+      <div class="page-header" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+        <div class="page-title">Clínica Stella</div>
+        <div class="page-subtitle">Panel de control · visión global</div>
       </div>
 
       ${hasCaja ? `

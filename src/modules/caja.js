@@ -30,17 +30,17 @@ const Caja = {
       </div>
 
       <!-- Header de módulo -->
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:20px">
+      <div class="page-header">
         <div>
-          <h2 style="font-size:20px;font-weight:700">💰 Caja</h2>
-          <p style="color:var(--muted);font-size:13px;margin-top:2px">Ventas e ingresos · importados desde Clínica Cloud</p>
+          <div class="page-title">Caja</div>
+          <div class="page-subtitle">Ventas e ingresos · importados desde Clínica Cloud</div>
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap" id="caja-header-actions">
-          <label class="btn" id="caja-upload-btn">📁 Subir CSV
+        <div class="page-actions" id="caja-header-actions">
+          <label class="btn" id="caja-upload-btn">Subir CSV
             <input type="file" id="caja-file-input" accept=".csv,.txt" />
           </label>
-          <button class="btn-ghost hidden" id="caja-export-btn">⬇️ Exportar BD</button>
-          <button class="btn-danger hidden" id="caja-reset-btn">🗑 Reset</button>
+          <button class="btn-ghost hidden" id="caja-export-btn">Exportar BD</button>
+          <button class="btn-danger hidden" id="caja-reset-btn">Borrar datos</button>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ const Caja = {
       <!-- Contenido principal -->
       <div id="caja-content" class="${App.state.cajaRecords.length ? '' : 'hidden'}">
         <!-- Tabs -->
-        <div style="display:flex;gap:4px;margin-bottom:18px;background:var(--surface);border-radius:10px;padding:4px;width:fit-content;flex-wrap:wrap">
+        <div class="module-tabs" style="">
           ${[['dashboard','📊 Dashboard'],['agenda','👨‍⚕️ Agenda'],['newrec','🆕 Nuevos vs Recurrentes'],['category','💼 Línea Negocio'],['patients','👥 Pacientes']].map(([k,l]) =>
             `<button class="nav-btn ${this.activeTab===k?'active':''}" data-cajtab="${k}">${l}</button>`
           ).join('')}
